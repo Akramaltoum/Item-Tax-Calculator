@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Account Sign‑In</title>
+  <title>Account Login</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -22,6 +22,22 @@
       margin: 0;
     }
 
+    header nav {
+      margin-top: 10px;
+    }
+
+    header nav a {
+      margin-right: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    header nav a:hover {
+      color: #007BFF;
+    }
+
     .main {
       flex: 1;
       display: flex;
@@ -29,19 +45,13 @@
       align-items: center;
     }
 
-    .login-options {
+    .login-box {
       background-color: white;
       padding: 40px;
       border-radius: 8px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       text-align: center;
       width: 300px;
-    }
-
-    .login-options p {
-      margin-bottom: 20px;
-      font-size: 18px;
-      font-weight: bold;
     }
 
     .login-btn {
@@ -74,21 +84,35 @@
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <h1>Account Login or Sign Up</h1>
-  </header>
-  <div class="main">
-    <div class="login-options">
-      <p>Sign in or sign up with:</p>
-      <!-- Link to Google Accounts sign‑in; opens in a new tab -->
-      <a class="login-btn google" href="https://accounts.google.com" target="_blank">Continue with Google</a>
-      <!-- Link to Apple Account sign‑in; opens in a new tab -->
-      <a class="login-btn apple"  href="https://account.apple.com"  target="_blank">Continue with Apple</a>
-    </div>
+
+<header>
+  <h1>Account</h1>
+  <nav>
+    <a href="sales-tax-calculator.html">Home</a>
+    <a href="login.html">Account</a>
+  </nav>
+</header>
+
+<div class="main">
+  <div class="login-box">
+    <h2>Login or Sign Up</h2>
+
+    <a class="login-btn google" href="https://accounts.google.com">
+      Continue with Google
+    </a>
+
+    <a class="login-btn apple" href="https://account.apple.com">
+      Continue with Apple
+    </a>
+
   </div>
-  <footer>
-    &copy; 2026 Sales Tax Calculator
-  </footer>
+</div>
+
+<footer>
+  © 2026 Sales Tax Calculator
+</footer>
+
 </body>
 </html>
