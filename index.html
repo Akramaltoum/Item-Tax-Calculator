@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Quick Item Tax Calculator</title>
+  <title>Sales Tax Calculator</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -12,6 +12,7 @@
       min-height: 100vh;
     }
 
+    /* Header styles */
     header {
       background-color: white;
       padding: 20px 30px;
@@ -22,6 +23,24 @@
       margin: 0;
     }
 
+    /* Simple navigation for Home and Account */
+    header nav {
+      margin-top: 10px;
+    }
+
+    header nav a {
+      margin-right: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    header nav a:hover {
+      color: #007BFF;
+    }
+
+    /* Layout for the main content */
     .main {
       flex: 1;
       display: flex;
@@ -66,9 +85,13 @@
 </head>
 
 <body>
-
 <header>
   <h1>Sales Tax Calculator</h1>
+  <!-- Navigation bar: Home goes back to this page; Account opens the login page in a new tab -->
+  <nav>
+    <a href="sales-tax-calculator.html">Home</a>
+    <a href="login.html" target="_blank">Account</a>
+  </nav>
 </header>
 
 <div class="main">
@@ -100,14 +123,16 @@
 </div>
 
 <footer>
-  © 2026 Item Sales Tax Calculator | 
+  © 2026 Sales Tax Calculator | Built by Akram
 </footer>
 
 <script>
+// Function to compute tax and total
 function calculateTax() {
   let price = document.getElementById("price").value;
   let taxRate = document.getElementById("taxRate").value;
 
+  // Validate price input
   if (!price || price <= 0) {
     document.getElementById("result").innerHTML = "Please enter a valid price.";
     return;
@@ -116,13 +141,14 @@ function calculateTax() {
   let taxAmount = price * taxRate;
   let total = parseFloat(price) + taxAmount;
 
+  // Display the result
   document.getElementById("result").innerHTML =
     "Tax: $" + taxAmount.toFixed(2) + "<br>Total: $" + total.toFixed(2);
 }
 </script>
-
 </body>
 </html>
+
 
 
 
