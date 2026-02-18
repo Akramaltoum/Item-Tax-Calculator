@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Account Sign‑In</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: white;
+      padding: 20px 30px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    .main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-options {
+      background-color: white;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 300px;
+    }
+
+    .login-options p {
+      margin-bottom: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .login-btn {
+      display: block;
+      margin: 10px 0;
+      padding: 12px;
+      text-decoration: none;
+      color: #fff;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    .google {
+      background-color: #4285F4;
+    }
+
+    .apple {
+      background-color: #000;
+    }
+
+    .login-btn:hover {
+      opacity: 0.9;
+    }
+
+    footer {
+      background-color: white;
+      text-align: center;
+      padding: 15px;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Account Login or Sign Up</h1>
+  </header>
+  <div class="main">
+    <div class="login-options">
+      <p>Sign in or sign up with:</p>
+      <!-- Link to Google Accounts sign‑in; opens in a new tab -->
+      <a class="login-btn google" href="https://accounts.google.com" target="_blank">Continue with Google</a>
+      <!-- Link to Apple Account sign‑in; opens in a new tab -->
+      <a class="login-btn apple"  href="https://account.apple.com"  target="_blank">Continue with Apple</a>
+    </div>
+  </div>
+  <footer>
+    &copy; 2026 Sales Tax Calculator
+  </footer>
+</body>
+</html>
