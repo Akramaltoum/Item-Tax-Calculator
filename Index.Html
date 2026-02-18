@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quick Tax Calculator</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      margin-top: 100px;
+    }
+    input, select {
+      padding: 10px;
+      margin: 10px;
+      width: 200px;
+    }
+    button {
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Sales Tax Calculator</h1>
+
+<input type="number" id="price" placeholder="Enter price">
+
+<select id="taxRate">
+  <option value="0.13">Ontario (13%)</option>
+  <option value="0.05">Alberta (5%)</option>
+  <option value="0.15">Nova Scotia (15%)</option>
+</select>
+
+<br>
+
+<button onclick="calculateTax()">Calculate</button>
+
+<h2 id="result"></h2>
+
+<script>
+function calculateTax() {
+  let price = document.getElementById("price").value;
+  let taxRate = document.getElementById("taxRate").value;
+
+  let taxAmount = price * taxRate;
+  let total = parseFloat(price) + taxAmount;
+
+  document.getElementById("result").innerHTML =
+    "Tax: $" + taxAmount.toFixed(2) + "<br>Total: $" + total.toFixed(2);
+}
+</script>
+
+</body>
+</html>
