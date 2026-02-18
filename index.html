@@ -17,19 +17,36 @@
       padding: 10px 20px;
       cursor: pointer;
     }
-    h1 {
+  
+    .title {
   position: absolute;
   top: 20px;
   right: 20px;
   margin: 0;
-   }
+}
+
+.container {
+  text-align: center;
+  margin-top: 120px;
+}
+    
   </style>
 </head>
 <body>
 
-<h1>Item Tax Calculator</h1>
+<h1 class="title">Sales Tax Calculator</h1>
 
-<input type="number" id="price" placeholder="Enter price">
+<div class="container">
+  <input type="number" id="price" placeholder="Enter price">
+
+  <select id="taxRate">
+    ...
+  </select>
+
+  <button onclick="calculateTax()">Calculate</button>
+
+  <h2 id="result"></h2>
+</div>
 
 <select id="taxRate">
   <option value="0.15">Newfoundland and Labrador (15%)</option>
