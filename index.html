@@ -4,76 +4,114 @@
   <title>Quick Item Tax Calculator</title>
   <style>
     body {
-      font-family: Arial;
+      font-family: Arial, sans-serif;
       margin: 0;
-      Padding: 0;
+      background-color: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
+
+    header {
+      background-color: white;
+      padding: 20px 30px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    .main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .calculator {
+      background-color: white;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
     input, select {
       padding: 10px;
       margin: 10px;
-      width: 200px;
+      width: 220px;
+      font-size: 16px;
     }
+
     button {
       padding: 10px 20px;
+      font-size: 16px;
       cursor: pointer;
     }
-  
-    .title {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  margin: 0;
-}
 
-.container {
-  text-align: center;
-  margin-top: 120px;
-}
-    
+    #result {
+      margin-top: 15px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    footer {
+      background-color: white;
+      text-align: center;
+      padding: 15px;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+    }
   </style>
 </head>
+
 <body>
 
-<h1 class="title">Sales Tax Calculator</h1>
+<header>
+  <h1>Sales Tax Calculator</h1>
+</header>
 
-<div class="container">
-  <input type="number" id="price" placeholder="Enter price">
+<div class="main">
+  <div class="calculator">
+    <input type="number" id="price" placeholder="Enter price">
 
-  <select id="taxRate">
-    ...
-  </select>
+    <select id="taxRate">
+      <option value="0.15">Newfoundland and Labrador (15%)</option>
+      <option value="0.15">Prince Edward Island (15%)</option>
+      <option value="0.15">Nova Scotia (15%)</option>
+      <option value="0.15">New Brunswick (15%)</option>
+      <option value="0.14975">Quebec (14.975%)</option>
+      <option value="0.13">Ontario (13%)</option>
+      <option value="0.12">British Columbia (12%)</option>
+      <option value="0.12">Manitoba (12%)</option>
+      <option value="0.11">Saskatchewan (11%)</option>
+      <option value="0.05">Alberta (5%)</option>
+      <option value="0.05">Northwest Territories (5%)</option>
+      <option value="0.05">Yukon (5%)</option>
+      <option value="0.05">Nunavut (5%)</option>
+    </select>
 
-  <button onclick="calculateTax()">Calculate</button>
+    <br>
 
-  <h2 id="result"></h2>
+    <button onclick="calculateTax()">Calculate</button>
+
+    <h2 id="result"></h2>
+  </div>
 </div>
 
-<select id="taxRate">
-  <option value="0.15">Newfoundland and Labrador (15%)</option>
-  <option value="0.15">Prince Edward Island (15%)</option>
-  <option value="0.15">Nova Scotia (15%)</option>
-  <option value="0.15">New Brunswick (15%)</option>
-  <option value="0.14975">Quebec (14.975%)</option>
-  <option value="0.13">Ontario (13%)</option>
-  <option value="0.12">British Columbia (12%)</option>
-  <option value="0.11">Saskatchewan (11%)</option>
-  <option value="0.05">Alberta (5%)</option>
-  <option value="0.05">Manitoba (5% GST only shown here — update if needed)</option>
-  <option value="0.05">Northwest Territories (5%)</option>
-  <option value="0.05">Yukon (5%)</option>
-  <option value="0.05">Nunavut (5%)</option>
-</select>
-
-<br>
-
-<button onclick="calculateTax()">Calculate</button>
-
-<h2 id="result"></h2>
+<footer>
+  © 2026 Sales Tax Calculator | Built by Akram
+</footer>
 
 <script>
 function calculateTax() {
   let price = document.getElementById("price").value;
   let taxRate = document.getElementById("taxRate").value;
+
+  if (!price || price <= 0) {
+    document.getElementById("result").innerHTML = "Please enter a valid price.";
+    return;
+  }
 
   let taxAmount = price * taxRate;
   let total = parseFloat(price) + taxAmount;
@@ -85,3 +123,4 @@ function calculateTax() {
 
 </body>
 </html>
+
